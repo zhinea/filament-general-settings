@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Joaopaulolndev\FilamentGeneralSettings\Forms\AnalyticsFieldsForm;
 use Joaopaulolndev\FilamentGeneralSettings\Forms\ApplicationFieldsForm;
-use Joaopaulolndev\FilamentGeneralSettings\Forms\CustomForms;
 use Joaopaulolndev\FilamentGeneralSettings\Forms\EmailFieldsForm;
 use Joaopaulolndev\FilamentGeneralSettings\Forms\SeoFieldsForm;
 use Joaopaulolndev\FilamentGeneralSettings\Forms\SocialNetworkFieldsForm;
@@ -78,27 +77,27 @@ class GeneralSettingsPage extends Page
 
     public function mount(): void
     {
-        $this->data = GeneralSetting::first()?->toArray() ?: [];
+        $data = GeneralSetting::first()?->toArray() ?: [];
 
-        $this->data['seo_description'] = $this->data['seo_description'] ?? '';
-        $this->data['seo_preview'] = $this->data['seo_preview'] ?? '';
-        $this->data['theme_color'] = $this->data['theme_color'] ?? '';
-        $this->data['seo_metadata'] = $this->data['seo_metadata'] ?? [];
-        $this->data = EmailDataHelper::getEmailConfigFromDatabase($this->data);
+        $data['seo_description'] = $data['seo_description'] ?? '';
+        $data['seo_preview'] = $data['seo_preview'] ?? '';
+        $data['theme_color'] = $data['theme_color'] ?? '';
+        $data['seo_metadata'] = $data['seo_metadata'] ?? [];
+        $data = EmailDataHelper::getEmailConfigFromDatabase($data);
 
-        if (isset($this->data['site_logo']) && is_string($this->data['site_logo'])) {
-            $this->data['site_logo'] = [
-                'name' => $this->data['site_logo'],
+        if (isset($data['site_logo']) && is_string($data['site_logo'])) {
+            $data['site_logo'] = [
+                'name' => $data['site_logo'],
             ];
         }
 
-        if (isset($this->data['site_favicon']) && is_string($this->data['site_favicon'])) {
-            $this->data['site_favicon'] = [
-                'name' => $this->data['site_favicon'],
+        if (isset($data['site_favicon']) && is_string($data['site_favicon'])) {
+            $data['site_favicon'] = [
+                'name' => $data['site_favicon'],
             ];
         }
 
-//        $this->form?->fill($this->data);
+        $this->form?->fill($data);
     }
 
     public function form(Form $form): Form
