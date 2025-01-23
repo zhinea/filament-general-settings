@@ -100,6 +100,10 @@ class GeneralSettingsPage extends Page
         //            ];
         //        }
 
+        foreach ($data as $key => $value){
+            $data[$key] = $value ?? '';
+        }
+
         Log::info($data);
 
         $this->form?->fill($data);
