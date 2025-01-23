@@ -109,7 +109,7 @@ class GeneralSettingsPage extends Page
             $data[$key] = $value ?? '';
         }
 
-        $this->data = $data;
+//        $this->data = $data;
 
         $this->form->fill($data);
     }
