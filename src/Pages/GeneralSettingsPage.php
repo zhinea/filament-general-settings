@@ -109,8 +109,6 @@ class GeneralSettingsPage extends Page
             $data[$key] = $value ?? '';
         }
 
-        Log::info($data);
-
         $this->data = $data;
 
         $this->form->fill($data);
