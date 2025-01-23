@@ -152,14 +152,14 @@ class GeneralSettingsPage extends Page
                             ->acceptedFileTypes(['image/x-icon', 'image/vnd.microsoft.icon'])
                             ->columnSpan(2),
                     ])
-//                        ->columns(4)
-//                        ->visible(fn () => config('filament-general-settings.show_logo_and_favicon')),
-//                    TextInput::make('support_email')
-//                        ->label(__('filament-general-settings::default.support_email'))
-//                        ->prefixIcon('heroicon-o-envelope'),
-//                    TextInput::make('support_phone')
-//                        ->prefixIcon('heroicon-o-phone')
-//                        ->label(__('filament-general-settings::default.support_phone')),
+                        ->columns(4)
+                        ->visible(fn () => config('filament-general-settings.show_logo_and_favicon')),
+                    TextInput::make('support_email')
+                        ->label(__('filament-general-settings::default.support_email'))
+                        ->prefixIcon('heroicon-o-envelope'),
+                    TextInput::make('support_phone')
+                        ->prefixIcon('heroicon-o-phone')
+                        ->label(__('filament-general-settings::default.support_phone')),
 //                    ColorPicker::make('theme_color')
 //                        ->label(__('filament-general-settings::default.theme_color'))
 //                        ->prefixIcon('heroicon-o-swatch')
