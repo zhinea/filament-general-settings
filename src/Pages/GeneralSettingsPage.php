@@ -119,7 +119,7 @@ class GeneralSettingsPage extends Page
             $arrTabs[] = Tabs\Tab::make('Application Tab')
                 ->label(__('filament-general-settings::default.application'))
                 ->icon('heroicon-o-tv')
-                ->schema(ApplicationFieldsForm::get())
+//                ->schema(ApplicationFieldsForm::get())
                 ->columns(3);
         }
 
