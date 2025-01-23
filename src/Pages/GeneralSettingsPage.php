@@ -25,7 +25,7 @@ use Joaopaulolndev\FilamentGeneralSettings\Services\MailSettingsService;
 class GeneralSettingsPage extends Page
 {
     use InteractsWithForms;
-    
+
     protected static string $view = 'filament-general-settings::filament.pages.general-settings-page';
 
     /**
@@ -88,17 +88,17 @@ class GeneralSettingsPage extends Page
         $data['seo_metadata'] = $data['seo_metadata'] ?? [];
         $data = EmailDataHelper::getEmailConfigFromDatabase($data);
 
-        if (isset($data['site_logo']) && is_string($data['site_logo'])) {
-            $data['site_logo'] = [
-                'name' => $data['site_logo'],
-            ];
-        }
-
-        if (isset($data['site_favicon']) && is_string($data['site_favicon'])) {
-            $data['site_favicon'] = [
-                'name' => $data['site_favicon'],
-            ];
-        }
+//        if (isset($data['site_logo']) && is_string($data['site_logo'])) {
+//            $data['site_logo'] = [
+//                'name' => $data['site_logo'],
+//            ];
+//        }
+//
+//        if (isset($data['site_favicon']) && is_string($data['site_favicon'])) {
+//            $data['site_favicon'] = [
+//                'name' => $data['site_favicon'],
+//            ];
+//        }
 
         $this->form?->fill($data);
     }
