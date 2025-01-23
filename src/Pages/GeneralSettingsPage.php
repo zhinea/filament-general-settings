@@ -5,6 +5,7 @@ namespace Joaopaulolndev\FilamentGeneralSettings\Pages;
 use Filament\Actions;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\Tabs;
+use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
@@ -23,6 +24,8 @@ use Joaopaulolndev\FilamentGeneralSettings\Services\MailSettingsService;
 
 class GeneralSettingsPage extends Page
 {
+    use InteractsWithForms;
+    
     protected static string $view = 'filament-general-settings::filament.pages.general-settings-page';
 
     /**
