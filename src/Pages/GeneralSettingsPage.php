@@ -132,26 +132,26 @@ class GeneralSettingsPage extends Page
                     Textarea::make('site_description')
                         ->label(__('filament-general-settings::default.site_description'))
                         ->columnSpanFull(),
-//                    Grid::make()->schema([
-//                        FileUpload::make('site_logo')
-//                            ->label(fn () => __('filament-general-settings::default.site_logo'))
-//                            ->image()
-//                            ->directory('assets')
-//                            ->visibility('public')
-//                            ->moveFiles()
-//                            ->imageEditor()
-//                            ->getUploadedFileNameForStorageUsing(fn () => 'site_logo.png')
-//                            ->columnSpan(2),
-//                        FileUpload::make('site_favicon')
-//                            ->label(fn () => __('filament-general-settings::default.site_favicon'))
-//                            ->image()
-//                            ->directory('assets')
-//                            ->visibility('public')
-//                            ->moveFiles()
-//                            ->getUploadedFileNameForStorageUsing(fn () => 'site_favicon.ico')
-//                            ->acceptedFileTypes(['image/x-icon', 'image/vnd.microsoft.icon'])
-//                            ->columnSpan(2),
-//                    ])
+                    Grid::make()->schema([
+                        FileUpload::make('site_logo')
+                            ->label(fn () => __('filament-general-settings::default.site_logo'))
+                            ->image()
+                            ->directory('assets')
+                            ->visibility('public')
+                            ->moveFiles()
+                            ->imageEditor()
+                            ->getUploadedFileNameForStorageUsing(fn () => 'site_logo.png')
+                            ->columnSpan(2),
+                        FileUpload::make('site_favicon')
+                            ->label(fn () => __('filament-general-settings::default.site_favicon'))
+                            ->image()
+                            ->directory('assets')
+                            ->visibility('public')
+                            ->moveFiles()
+                            ->getUploadedFileNameForStorageUsing(fn () => 'site_favicon.ico')
+                            ->acceptedFileTypes(['image/x-icon', 'image/vnd.microsoft.icon'])
+                            ->columnSpan(2),
+                    ])
 //                        ->columns(4)
 //                        ->visible(fn () => config('filament-general-settings.show_logo_and_favicon')),
 //                    TextInput::make('support_email')
