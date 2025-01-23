@@ -106,6 +106,8 @@ class GeneralSettingsPage extends Page
 
         Log::info($data);
 
+        $this->data = $data;
+
         $this->form->fill($data);
     }
 
