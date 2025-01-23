@@ -97,6 +97,8 @@ class GeneralSettingsPage extends Page
                 'name' => $this->data['site_favicon'],
             ];
         }
+
+        $this->form?->fill($this->data);
     }
 
     public function form(Form $form): Form
