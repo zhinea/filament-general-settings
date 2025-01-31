@@ -160,10 +160,11 @@ class GeneralSettingsPage extends Page
 
         if (config('filament-general-settings.show_custom_tabs')) {
             foreach (config('filament-general-settings.custom_tabs') as $key => $customTab) {
+                $fields = $customTab['fields_class'] ? $customTab['fields_class']::schema() : $customTab['fields'];
                 $arrTabs[] = Tabs\Tab::make($customTab['label'])
                     ->label(__($customTab['label']))
                     ->icon($customTab['icon'])
-                    ->schema($customTab['fields'])
+                    ->schema($fields)
                     ->columns($customTab['columns'])
                     ->statePath('more_configs');
             }
