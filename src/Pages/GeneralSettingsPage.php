@@ -26,6 +26,7 @@ use Joaopaulolndev\FilamentGeneralSettings\Helpers\EmailDataHelper;
 use Joaopaulolndev\FilamentGeneralSettings\Mail\TestMail;
 use Joaopaulolndev\FilamentGeneralSettings\Models\GeneralSetting;
 use Joaopaulolndev\FilamentGeneralSettings\Services\MailSettingsService;
+use Ramsey\Uuid\Uuid;
 
 class GeneralSettingsPage extends Page
 {
@@ -95,13 +96,13 @@ class GeneralSettingsPage extends Page
 
         if (isset($data['site_logo']) && is_string($data['site_logo'])) {
             $data['site_logo'] = [
-                'name' => $data['site_logo'],
+                Uuid::uuid4()->toString() => $data['site_logo'],
             ];
         }
 
         if (isset($data['site_favicon']) && is_string($data['site_favicon'])) {
             $data['site_favicon'] = [
-                'name' => $data['site_favicon'],
+                Uuid::uuid4()->toString() => $data['site_favicon'],
             ];
         }
 
