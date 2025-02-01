@@ -21,7 +21,7 @@ class ApplicationFieldsForm
                 ->label(__('filament-general-settings::default.site_description'))
                 ->columnSpanFull(),
             Grid::make()->schema([
-                FileUpload::make('site_logo')
+                FileUpload::make('site_logo.url')
                     ->label(fn () => __('filament-general-settings::default.site_logo'))
                     ->image()
                     ->multiple(false)
@@ -31,7 +31,7 @@ class ApplicationFieldsForm
                     ->imageEditor()
                     ->getUploadedFileNameForStorageUsing(fn () => 'site_logo.png')
                     ->columnSpan(2),
-                FileUpload::make('site_favicon')
+                FileUpload::make('site_favicon.url')
                     ->label(fn () => __('filament-general-settings::default.site_favicon'))
                     ->image()
                     ->multiple(false)
