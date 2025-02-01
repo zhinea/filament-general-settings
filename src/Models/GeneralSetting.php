@@ -31,5 +31,7 @@ class GeneralSetting extends Model
         'email_settings' => 'array',
         'social_network' => 'array',
         'more_configs' => 'array',
+        'site_logo' => 'array',
+        'site_favicon' => 'array',
     ];
 }
