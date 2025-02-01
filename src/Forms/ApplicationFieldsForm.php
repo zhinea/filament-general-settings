@@ -51,7 +51,7 @@ class ApplicationFieldsForm
             ColorPicker::make('theme_color')
                 ->label(__('filament-general-settings::default.theme_color'))
                 ->prefixIcon('heroicon-o-swatch')
-                ->formatStateUsing(fn (?string $state): string => $state ?? config('filament.theme.colors.primary') ?? "#2196F3")
+                ->formatStateUsing(fn (?string $state): string => $state ?? config('filament.theme.colors.primary') ?? '#2196F3')
                 ->helperText(__('filament-general-settings::default.theme_color_helper_text')),
         ];
     }
