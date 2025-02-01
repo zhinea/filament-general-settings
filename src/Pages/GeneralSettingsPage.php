@@ -96,17 +96,17 @@ class GeneralSettingsPage extends Page
 
         if (isset($data['site_logo']) && is_string($data['site_logo'])) {
             $data['site_logo'] = [
-                'url' => [
+//                'url' => [
                     Uuid::uuid4()->toString() => $data['site_logo'],
-                ]
+//                ]
             ];
         }
 
         if (isset($data['site_favicon']) && is_string($data['site_favicon'])) {
             $data['site_favicon'] = [
-                'url' => [
+//                'url' => [
                     Uuid::uuid4()->toString() => $data['site_favicon'],
-                ],
+//                ],
             ];
         }
 
@@ -114,7 +114,7 @@ class GeneralSettingsPage extends Page
             $data[$key] = $value ?? '';
         }
 
-        $this->data = $data;
+//        $this->data = $data;
 
         $this->form->fill($data);
     }
